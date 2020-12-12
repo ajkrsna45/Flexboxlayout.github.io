@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+</head>
+<style>
+    *{
+        /* For managing padding */
+        box-sizing: border-box;
+    }
+    body{
+        font-family:arial;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    header{
+        background-color: rgb(63, 88, 25);
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+    }
+    header ul{
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    header a{
+        color: white;
+    }
+    #logo{
+        margin: 0 auto;
+        font-size: 25px ;
+    }
+    
+    #menu li{
+        padding:10px;
+        }
+#social-links li{
+    padding: 10px;
+}
+#main{
+    display: flex;
+}
+aside{
+    flex:0 0 20vw;
+    background-color: rgb(145, 137, 145);
+}
+.service-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+article{
+    padding: 10px;
+}
+aside{
+
+padding: 15px;
+flex: 0 0 20vw;
+background: rgb(110, 110, 52);
+}
+aside ul{
+    list-style-type: none;
+    padding: 0;
+    
+
+}
+aside ul a{
+    color:rgb(148, 18, 18);
+    padding: 10px;
+    display:block;
+    border-bottom:black 1px solid;
+
+
+}
+aside img{
+    width: 100%;
+}
+
+
+.service-box{
+    border:groove gray 1px;
+     padding: 10px;
+    flex-basis: 32%;
+     max-width: 370px; 
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 15px;
+}
+.service-box h3{
+    margin: 5px 0px 10px;
+}
+.service-box p{
+    margin:  0 0 10px;
+}
+.call-to-action{
+    background-color:black ;
+    color: white;
+    padding :8px 13px;
+}
+.call-to-action a {
+    align-self: flex-start;
+    border: 2px solid transparent;
+    margin-top: auto;
+}
+.call-to-action a:hover{
+    
+    border: 2px solid transparent;
+    color: gray;
+}
+.service-box img{
+    width:100% ;
+}
+    footer{
+        background-color: tomato;
+        color:#000;
+        text-align: center;
+        padding: 15px ;
+    }
+    @media screen and (max-width: 850px){
+        .service-box{
+            flex-basis: 48%;
+        }
+        aside{
+        flex: 0 0 20vw;
+        }
+        
+    }
+    @media screen and (max-width: 600px){
+        header{
+            flex-direction: column;
+            
+        }
+        #logo{
+            order: -1;
+        }
+        article{
+            order: -1;
+        }
+        #main{
+            flex-direction: column;
+        }
+        .service-container{
+            flex-direction: column;
+            align-items: center;
+        }
+        h2{
+            text-align: center;
+        }
+        
+    }
+</style>
+
+<body>
+    <header>
+        <nav id="menu">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">  About us</a></li>
+                
+            </ul>
+        </nav>
+        <div id="logo">
+            <a href="">Krishna</a>
+        </div>
+        <nav id="social-links">
+            <ul>
+                <!-- ul>li*3>a trick -->
+                <li><a href="">C<i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="">B<i class="fab fa-twitter"></i></a></li>
+                <li><a href="">A<i class="fab fa-google-plus-g"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="main">
+        <aside class=" ">
+        <ul>
+            <li><a href="">some links</a></li>
+            <li><a href="">some links</a></li>
+            <li><a href="">some links</a></li>
+            <li><a href="">some links</a></li>
+            <li><a href="">some links</a></li>
+        </ul>
+        <img src="krishna-33046.jpg">
+        </aside>
+        <article class=" ">
+            <h2>Welcome in Krishna Family</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quis porro fugiat voluptas iure eos. Nisi in at sapiente provident similique obcaecati molestiae fugit quibusdam, corrupti quaerat non numquam quam repellat vitae accusamus omnis dicta culpa cupiditate deserunt! Id inventore eum, dolores quibusdam dolore odio, hic possimus quae omnis odit atque deserunt accusamus quod a ullam veniam ex veritatis distinctio vitae excepturi? Explicabo deserunt dolore illum architecto provident rem aliquam corporis necessitatibus natus debitis aliquid quos tempora libero velit odit pariatur, asperiores ab saepe eaque laboriosam at ipsum. Voluptates obcaecati cupiditate excepturi minima vero temporibus magnam harum, voluptatibus dolore sequi!</p>
+            <h2>Our Services</h2>
+            <div class="service-container">
+                <div class="service-box">
+                <div class="service-image">
+                    <img src="food1.jpg"alt="">
+
+                </div>
+                <div class="service-title">
+                    <h3>FRUITS</h3>
+                </div>
+                <div class="service-desc">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, ipsum!</p>
+                </div>
+                <div class="call-to-action">
+                    <a href="">Read More</a>
+                </div>
+               
+            </div>
+            <div class="service-box">
+                <div class="service-image">
+                    <img src="food2.jpg"alt="">
+
+                </div>
+                <div class="service-title">
+                    <h3>Vegetables</h3>
+                </div>
+                <div class="service-desc">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, ipsum!</p>
+                </div>
+                <div class="call-to-action">
+                    <a href="">Read More</a>
+                </div>
+                
+            </div>
+            <div class="service-box">
+                <div class="service-image">
+                    <img src="food3.jpg"alt="">
+
+                </div>
+                <div class="service-title">
+                    <h3>Grain</h3>
+                </div>
+                <div class="service-desc">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, ipsum!</p>
+                </div>
+                <div class="call-to-action">
+                    <a href="">Read More</a>
+                </div>
+              
+            </div>
+        </div>
+
+        </article>
+    </div>
+    <footer>
+        &copy Made By Ajay Gupta
+    </footer>
+    
+</body>
+</html>
